@@ -1,0 +1,24 @@
+.nav-container {
+    background-color: inherit; /* Matches the webpage background */
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    padding: 10px;
+  }
+  
+  .nav-button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: transparent; /* Matches the webpage background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .nav-button a {
+    text-decoration: none;
+    color: inherit; /* Matches the webpage text color */
+  }
+  
+  .nav-button:hover {
+    background-color: #f0f0f0; /* Slight hover effect */
+  }
