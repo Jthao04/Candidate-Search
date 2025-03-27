@@ -60,35 +60,35 @@ const CandidateSearch = () => {
     setCurrentIndex(currentIndex + 1);
   };
 
-  const handleFetchMore = async () => {
-    setCandidates([]);
-    setCurrentIndex(0);
-    const users = await searchGithub();
-    const detailedCandidates = await Promise.all(
-      users.map(async (user: { login: string; id: number; avatar_url: string }) => {
-        const extra = await searchGithubUser(user.login);
-        const {
-          name,
-          location,
-          email,
-          company,
-          html_url,
-          bio
-        } = extra;
-        return {
-          login: user.login,
-          avatar_url: user.avatar_url,
-          name: name || 'No Name',
-          location: location || 'No Location',
-          email: email || 'No Email',
-          company: company || 'No Company',
-          html_url,
-          bio: bio || 'No Bio'
-        } as CandidateDetails;
-      })
-    );
-    setCandidates(detailedCandidates);
-  };
+const handleFetchMore = async () => {
+  setCandidates([]); // Clear the current candidates
+  setCurrentIndex(0); // Reset the index
+  const users = await searchGithub(); // Fetch new candidates
+  const detailedCandidates = await Promise.all(
+    users.map(async (user: { login: string; id: number; avatar_url: string }) => {
+      const extra = await searchGithubUser(user.login);
+      const {
+        name,
+        location,
+        email,
+        company,
+        html_url,
+        bio
+      } = extra;
+      return {
+        login: user.login,
+        avatar_url: user.avatar_url,
+        name: name || 'No Name',
+        location: location || 'No Location',
+        email: email || 'No Email',
+        company: company || 'No Company',
+        html_url,
+        bio: bio || 'No Bio'
+      } as CandidateDetails;
+    })
+  );
+  setCandidates(detailedCandidates); // Update the candidates array
+};
 
   return (
     <div>
