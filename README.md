@@ -11,7 +11,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-# [Live Page]()
+# [Live Page](https://candidate-search-vbbu.onrender.com)
 
 ## Screenshot
 ![Fullscreen Image](Develop/public/Screenshot.png)
